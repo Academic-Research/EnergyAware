@@ -39,7 +39,10 @@ For each node expansion in the A* search the cost of the travel is computed cons
 ###### Aprroach
 Niu \etal~\cite{Niu2018Energy} present an energy efficient path planning for USVs considering sea current data;
 They use a combination of Voronoi diagram, Visibility Graph, Dijkstra search and energy consuption function for determination of the path.
-The Voronoi-Visibility energy-aware path planner were analysed through software simulation and compared to fifteen real mission considering mission time, \USV speed and sea current.
+For each Voronoi segment its determined a energy consumption weight calculated based on \USV relative speed, the sea current speed, the drag force the \USV experiences, and the travel duration.
+The predicted sea current speed is based on samples of the Tidetech Ltd, 2016. " Tidetech Ltd, Currents sample [Online]. https://www.tidetech.org/data. (Accessed 12 December 2016)".
+They present simulations of \USV path planning in the Singapore Strait and Croatian islands and compare the simulation results to fifteen real-world trial on the same regions.
+
 ###### Contribution
 ###### Comparison
 
@@ -53,5 +56,13 @@ The Voronoi-Visibility energy-aware path planner were analysed through software 
 ###### Contribution
 ###### Comparison
 
-\USV energy-aware path planning studies are based on the fact that sea current imply higher level of energy cost on trnaspacing such waters.
-Usually, for USV, there is a limited energy and saving energy allow more complex and demanding missions.
+Usually, for \USV, there is a limited energy and saving energy allow more complex and demanding missions.
+\USV energy-aware path planning studies usually are based on the fact that sea current imply higher level of energy cost on trnaspacing such waters.
+For example, in Niu \etal~\cite{Niu2018Energy} they present an energy efficient path planning for USVs considering sea current data;
+They use a combination of Voronoi diagram, Visibility Graph, Dijkstra search and energy consuption function for determination of the path.
+For each Voronoi segment its determined a energy consumption weight calculated based on \USV relative speed, the sea current speed, the drag force the \USV experiences, and the travel duration.
+The predicted sea current speed is based on samples of the Tidetech Ltd, 2016. " Tidetech Ltd, Currents sample [Online]. https://www.tidetech.org/data. (Accessed 12 December 2016)".
+They present simulations of \USV path planning in the Singapore Strait and Croatian islands and compare the simulation results to fifteen real-world trial on the same regions.
+Comparisons between the energy-aware path in comparison to the shortest path indicate increase on energy saving between 1.27% and 52.84%. 
+More energy saving was found on situation with favourable sea current direction and low speed.
+
