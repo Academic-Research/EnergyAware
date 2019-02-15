@@ -1,0 +1,57 @@
+###### Alvarez2002Interaction ######
+###### Aprroach
+Performed several simulations of eddies of 4 different lenghts and analysed the effort of the \AUV on trying to got straight ahead in a period of 500 s.
+###### Contribution
+Measured the impact of different sizes of eddies relative do the AUV size. 
+They concluded that eddies lenght scales similar to the AUV lenght scale cause more energy consuption than eddies hundreds bigger than the AUV size.
+###### Comparison
+In comparison to our approach they do not applied any solution to the problem they only measured and identified the problem.
+
+###### Cabreira2018Energy ######
+###### Aprroach
+###### Contribution
+###### Comparison
+
+###### Carmelo2015Energy ######
+###### Aprroach
+###### Contribution
+###### Comparison
+
+###### Carroll92AUV ######
+###### Aprroach
+In addition to exclusion zones and obstacles Carroll \etal~\cite{Carroll92AUV} present a path planner based on bathymetry and ocean current using A* search.
+The path planner keeps track of fuel resources and mission time for each proposed path segment and does the choice based on a expectation of remaining resources level combined with other requirements (i.e. user desired speed, underwater corridors known, and goal position).
+###### Contribution
+For each node expansion in the A* search the cost of the travel is computed considering AUV speed, fuel and corridor lenght.
+###### Comparison
+
+###### Kruger2007Optimal ######
+###### Aprroach
+###### Contribution
+###### Comparison
+
+###### Mei2006Energy ######
+###### Aprroach
+###### Contribution
+###### Comparison
+
+###### Niu2018Energy ######
+###### Aprroach
+Niu \etal~\cite{Niu2018Energy} present an energy efficient path planning for USVs considering sea current data;
+They use a combination of Voronoi diagram, Visibility Graph, Dijkstra search and energy consuption function for determination of the path.
+The Voronoi-Visibility energy-aware path planner were analysed through software simulation and compared to fifteen real mission considering mission time, \USV speed and sea current.
+###### Contribution
+###### Comparison
+
+###### Ooi2009Minimal ######
+###### Aprroach
+###### Contribution
+###### Comparison
+
+###### Stentz1994Optimal ######
+###### Aprroach
+###### Contribution
+###### Comparison
+
+\USV energy-aware path planning studies are based on the fact that sea current imply higher level of energy cost on trnaspacing such waters.
+Usually, for USV, there is a limited energy and saving energy allow more complex and demanding missions.
