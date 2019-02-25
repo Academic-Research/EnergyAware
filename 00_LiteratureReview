@@ -1,3 +1,6 @@
+
+SEARCH STRING:   (energy OR autonomy) AND (path AND planning) AND ground
+
 ###### Alvarez2002Interaction ######
 ###### Aprroach
 Performed several simulations of eddies of 4 different lenghts and analysed the effort of the \AUV on trying to got straight ahead in a period of 500 s.
@@ -24,14 +27,6 @@ The presented results when comparing theyr algorithm to a energy-aware back-and-
 ###### Comparison
 
 
-
-###### Franco2015Energy ######
-###### Aprroach
-###### Contribution
-###### Comparison
-
-
-
 ###### Carroll92AUV ######
 ###### Aprroach
 In addition to exclusion zones and obstacles Carroll \etal~\cite{Carroll92AUV} present a path planner based on bathymetry and ocean current using A* search.
@@ -41,14 +36,20 @@ For each node expansion in the A* search the cost of the travel is computed cons
 ###### Comparison
 
 
-
 ###### Franco2016Coverage ######
 Franco and Buttazo presend a energy model for determination of the energy cost of the path travelled by a UAV when covering area using the back-and-forth pattern.
 They determine the cost of a path considering basic measurable maneuvers, i.e., climb/descend, accelarate/decelerate, fly at constant speed, and rotate.
 See equation 6.
+
+Franco and Buttazo present an energy-aware path planning strategy for USVs performing area coverage using the back-and-forth pattern.
+They present a model based on the possible maneuvers of USVs (i.e. climb/descend, accelerate/decelerate), this way for each segment of the coverage route a maneuver sequence is determined to reduce energy consumption as a function of time.
+
+
 ###### Aprroach
 Based on the equation 6 the authors propose the computation of the integral of the energy cost related to a distance d, in order to find the optimal speed that minimizes the energy necessary to travel the d portion of the path.
 ###### Contribution
+Definition of an energy model to UAVs based on real measurements for estimation of power consumption as a function of speed in different operation situations.
+A energy-aware algorithm for path planning that satisfy path coverage and resolution constraits.
 ###### Comparison
 
 
@@ -64,7 +65,6 @@ Based on the equation 6 the authors propose the computation of the integral of t
 ###### Aprroach
 ###### Contribution
 ###### Comparison
-
 
 
 
@@ -88,6 +88,8 @@ They use a grid-based world representation, for each movement going from one cel
 For chosing of the energy optimal path, they used Dijkstra's algorithm where each weights represent the estimated energy cost to pass from one cell to another (Ei,j).
 They evaluated diferrent scenarios with different friction's coefficientes related to mud, grass, concrete, and asphalt and considered several rolling frictions, comparing Dijkstra shortest path considering energy cost and distance.
 The energy-efficient approach in general presented a gain compared to the increase of traveled distance, the energy gains were between 13\% and 46\%.
+
+Mejri \etal~\cite{Mejri2018Energy} present an energy-aware offline path planning for autonomous electric vehicle taking into account the rolling resistance and the path length. They use a grid-based world representation, for each movement going from one cell to another it is estimated energy cost ($E_{i,j}$) of the electric power delivered by the battery pack considering longitudinal traction force, aerodynamic force, gravity force and rolling resistance force. To chose the energy optimal path, they used Dijkstra's algorithm where each weight represents the estimated energy cost to pass from one cell to another ($E_{i,j}$). They evaluated different scenarios with different friction's coefficients related to mud, grass, concrete, and asphalt and considered several rolling frictions, comparing Dijkstra shortest path considering energy cost and distance. The energy-efficient approach, in general, presented gain compared to the increase of traveled distance, the energy gains were between 13\% and 46\%.
 
 
 
@@ -142,4 +144,13 @@ The path planning algorithm contains the same energy model present in Franco and
 Also, Cabreira et al. improve the model considering decelerations different from 0 during turn in a spiral path.
 Moreover, adapted the optimal speed determination through integral adding acceleration and deceleration functions to the integral.
 
-(energy OR autonomy) AND (path AND planning) AND ground
+ReducedText:
+
+Franco and Buttazo \cite{Franco2016Coverage} present an energy-aware path planning strategy for USVs performing area coverage using the back-and-forth pattern.
+They present a model based on the possible maneuvers of USVs (i.e. climb/descend, accelerate/decelerate), this way for each segment of the coverage route a maneuver sequence is determined to reduce energy consumption as a function of time.
+Based on \cite{Franco2016Coverage} Cabreira et al. \cite{Cabreira2018Energy} expand the energy model presented by Franco and Buttazo considering spiral cover patterns.
+The energy-aware spiral algorithm determines a set of waypoints and vertices that generate polygonal paths.
+Cabreira et al. improve the model considering acelerations different from 0 during turn when going from one trajectory segment to another.
+
+
+
