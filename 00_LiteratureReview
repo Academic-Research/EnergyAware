@@ -36,6 +36,19 @@ For each node expansion in the A* search the cost of the travel is computed cons
 ###### Comparison
 
 
+
+###### Datouo2017Optimal ######
+###### Aprroach
+Avoid costy areas based on pre-known ground conditions.
+Based on rolling coefficient of friction zones their method avoid path that are estimated to be more costy, even when they are shorter.
+The comparison in done with a aproach present by \cite{Liu2014Minimizing} and saved 7.5% more energy.
+###### Contribution
+Their main contribution is related to the determination of a energy model for three-wheelled omnidirection mobile robot.
+They present a modification of A* integrating penalty factors to the heuristic function related to proximity of obstacles, amount of turns (reducing turns) and passages by fricting zones.
+###### Comparison
+Do not plan considering different action, exploit only classical path planning based on search in graph.
+
+
 ###### Franco2016Coverage ######
 Franco and Buttazo presend a energy model for determination of the energy cost of the path travelled by a UAV when covering area using the back-and-forth pattern.
 They determine the cost of a path considering basic measurable maneuvers, i.e., climb/descend, accelarate/decelerate, fly at constant speed, and rotate.
@@ -50,6 +63,15 @@ Based on the equation 6 the authors propose the computation of the integral of t
 ###### Contribution
 Definition of an energy model to UAVs based on real measurements for estimation of power consumption as a function of speed in different operation situations.
 A energy-aware algorithm for path planning that satisfy path coverage and resolution constraits.
+###### Comparison
+
+
+
+###### Jabbarpour2017Green ######
+###### Aprroach
+Ant colony considering energy consumption
+###### Contribution
+The estimation of energy consumption is based on linear regression using real-time collected data (i.e. traction force, vehicle velocity, vechivle acceleration, road rolling resistance, and consumed energy).
 ###### Comparison
 
 
@@ -154,3 +176,4 @@ Cabreira et al. improve the model considering acelerations different from 0 duri
 
 
 
+(energy OR autonomy) AND (path AND planning) AND ground
