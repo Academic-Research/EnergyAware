@@ -104,7 +104,11 @@ e utilizando dijkstra para busca em grafo
 ###### Comparison
 Modela custo energético em relação a distancia da base emissora/receptora enquanto se desloca até a regao alvo baseado em busca em grafo.
 
-Related research deal with energy efficiency by choosing paths that minimize energy consumption through graph search (\ie, A*, and Dijkstra), without considering different types of actions such as enabling/disabling hardware devices or computational resources. 
+
+
+
+
+Related research deal with energy efficiency by choosing paths that minimize energy consumption through graph search (\ie, A* or Dijkstra), without considering different types of actions such as enabling/disabling hardware devices or computational resources. 
 Thus, planning strategies attempt to save energy by searching for the shortest path \cite{stentz1994,kruger2007}, or avoiding known regions that require more effort from the robotic system and consequently higher energy consumption \cite{Datouo2017Optimal,Jabbarpour2017Green,Liu2014Minimizing,Mejri2017Energy,Niu2018Energy,Ooi2009Minimal}. 
 The latter strategy resembles our approach regarding planning to avoid areas of greater energetic consumption. 
 In our case, apart from avoiding such areas, we act upon enabling/disabling hardware resources. 
@@ -113,17 +117,18 @@ For ground robots, the main criterion for energy saving is to avoid terrain area
 Datouo \etal~\cite{Datouo2017Optimal} and Mejri \etal~\cite{Mejri2017Energy} describe approaches where priority is given to choosing paths that consume less energy, \ie, avoiding regions of greater friction, even if the robot has to travel a greater distance relative to the shortest path. 
 In both works, the planning algorithm runs offline, using previously built maps and previous knowledge of the surface's friction and elevation profile.  
 Datouo \etal' solution achieves 7.5\% of energy saving while Mejri \etal' solution achieves upon 46\% of energy saving.
-Another approach considering data transmission between the robot and transmission bases is presented by Ooi \etal~\cite{Ooi2009Minimal}.
+Another approach, considering energy consumption by data transmission during a ground robot motion is presented by Ooi \etal~\cite{Ooi2009Minimal}.
 In this study, the robotic system considers the fact that the energy consumption on data transmitting increases polynomially (at least twice) with the distance from the transmission base while traveling to its goal.
-So, choosing paths near to the transmission base the simulations shows energy saving around 22.1\%.
+So, choosing paths near to the transmission base the simulations shows energy saving around 22.1\% in comparison to the shortest path.
 
 All the related search discussed presented above results of software simulation.
 Like our approach, only Liu \etal~\cite{Liu2014Minimizing} and Niu \etal~\cite{Niu2018Energy} present real-world trials for evaluation of the energy-saving strategies.
-Liu \etal~\cite{Liu2014Minimizing}, as well as the other presented works,  use graph search considering the energy cost of passing through areas of different coefficient of friction, its results show energy savings around 3.5\%.
+Liu \etal~\cite{Liu2014Minimizing}, as well as the other presented works, use graph search considering the energy cost of passing through areas of different coefficient of friction, its results show energy savings around 3.5\% in comparison to the shortest path.
 For marine robots, Niu \etal~\cite{Niu2018Energy} describe an algorithm based on optimal path planning considering marine current data from an online database. 
 After performing several real-world tests around Singapore islands, the authors observed up to 52.84\% energy savings when compared to the energy consumption when traveling through the shortest path. 
 
-In comparison to our work none of the related research presented planning of actions as our approach, they all use graph search considering energy consumption heuristics for path planning.
-The best results considering energying saving was around 46\% for ground robot and up to 52.84 for a marine robot, and considering real-world test using ground robots the best result was around 3.5\% of energy saving.
-Our aproach reaches 56% of energy saving in real-world tests.
+In comparison to our work none of the related research presented planning of actions as our approach, they all use graph search considering energy consumption heuristics to discover the optimal path.
+The best results considering energying saving was around 46\% for ground robot and up to 52.84\% for a marine robot. 
+Considering real-world test using ground robots the best result was around 3.5\% of energy saving.
+Our aproach reaches 52.02% of energy saving in real-world tests.
 
