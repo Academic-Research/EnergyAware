@@ -1,32 +1,6 @@
 
 SEARCH STRING:   (energy OR autonomy) AND (path AND planning) AND ground
 
-###### Alvarez2002Interaction ######
-###### Aprroach
-Performed several simulations of eddies of 4 different lenghts and analysed the effort of the \AUV on trying to got straight ahead in a period of 500 s.
-###### Contribution
-Measured the impact of different sizes of eddies relative do the AUV size. 
-They concluded that eddies lenght scales similar to the AUV lenght scale cause more energy consuption than eddies hundreds bigger than the AUV size.
-###### Comparison
-In comparison to our approach they do not applied any solution to the problem they only measured and identified the problem.
-
-
-###### Cabreira2018Energy ######
-###### Aprroach
-In Cabreira et al. they use a unmanned aerial vehicle for performing photogrammery.
-Photogrammery involves covering an are using simple patterns, such as back-an-forth and spiral.
-They present a energy-aware spiral path planning that contains a energy model to set different optimal speeds when flying in straight segments of the path.
-The energy-aware spiral algorithm determine a set of waypoints and vertices, generating polygonal paths.
-They determine the cost of a path considering basic measurable maneuvers, i.e., climb/descend, accelarate/decelerate, fly at constant speed, and rotate.
-See equation 6
-The path planning is based on a energy model defined from the power consumption measured for each operation.
-###### Contribution
-The main contribution presented by Cabreira2018Energy is the energy model of spiral path for determination of energy cost.
-Comparison between E-Spiral and E-BF algorithms in simulations over more than 3500 polygons areas with different characteristics, such as vertices, irregularity, and size.
-The presented results when comparing theyr algorithm to a energy-aware back-and-forth and the energy-aware spiral shows an effective energy saving of 10.37% in the worst case and 16.1% in the best case.
-###### Comparison
-
-
 ###### Carroll92AUV ######
 ###### Aprroach
 In addition to exclusion zones and obstacles Carroll \etal~\cite{Carroll92AUV} present a path planner based on bathymetry and ocean current using A* search.
@@ -36,35 +10,23 @@ For each node expansion in the A* search the cost of the travel is computed cons
 ###### Comparison
 
 
-
 ###### Datouo2017Optimal ######
 ###### Aprroach
 Avoid costy areas based on pre-known ground conditions.
 Based on rolling coefficient of friction zones their method avoid path that are estimated to be more costy, even when they are shorter.
 The comparison in done with a aproach present by \cite{Liu2014Minimizing} and saved 7.5% more energy.
+
+Approach basedo em A* considerado o custo nergetico da movimentação tendo considerado aspectos de custo relaciondos a movimentação.
+
 ###### Contribution
 Their main contribution is related to the determination of a energy model for three-wheelled omnidirection mobile robot.
 They present a modification of A* integrating penalty factors to the heuristic function related to proximity of obstacles, amount of turns (reducing turns) and passages by fricting zones.
+
+Apresenta ganho de 7.5 no consumo enrgético. 
+custo padrão:       195.24 
+custo com o metodo: 180.60
 ###### Comparison
 Do not plan considering different action, exploit only classical path planning based on search in graph.
-
-
-###### Franco2016Coverage ######
-Franco and Buttazo presend a energy model for determination of the energy cost of the path travelled by a UAV when covering area using the back-and-forth pattern.
-They determine the cost of a path considering basic measurable maneuvers, i.e., climb/descend, accelarate/decelerate, fly at constant speed, and rotate.
-See equation 6.
-
-Franco and Buttazo present an energy-aware path planning strategy for USVs performing area coverage using the back-and-forth pattern.
-They present a model based on the possible maneuvers of USVs (i.e. climb/descend, accelerate/decelerate), this way for each segment of the coverage route a maneuver sequence is determined to reduce energy consumption as a function of time.
-
-
-###### Aprroach
-Based on the equation 6 the authors propose the computation of the integral of the energy cost related to a distance d, in order to find the optimal speed that minimizes the energy necessary to travel the d portion of the path.
-###### Contribution
-Definition of an energy model to UAVs based on real measurements for estimation of power consumption as a function of speed in different operation situations.
-A energy-aware algorithm for path planning that satisfy path coverage and resolution constraits.
-###### Comparison
-
 
 
 ###### Jabbarpour2017Green ######
@@ -75,13 +37,20 @@ The estimation of energy consumption is based on linear regression using real-ti
 ###### Comparison
 
 
-
-###### Kruger2007Optimal ######
+###### Liu2014Minimizing ######
 ###### Aprroach
+
+* Busca em grafo para determinação do caminho usando A* com heuristica de
+* No modelo de consumo de energia proposto sao considerados o consumo pelos motores que movem o robô, the rolling friction e a energia (considerada constante) consumida pelo computador onboard, sensores e circuitos eletricos.
+* Heuristica baseada na Energy consumption attributed to the rolling friction of the robot wheels along the path segment
+
+
+
 ###### Contribution
 
-###### Comparison
+Minimização de de consumo de energia para robô com rodas
 
+###### Comparison
 
 
 ###### Mei2006Energy ######
@@ -126,55 +95,35 @@ They present simulations of \USV path planning in the Singapore Strait and Croat
 ###### Contribution
 ###### Comparison
 
-
-
 ###### Ooi2009Minimal ######
 ###### Aprroach
+Considerando custo energético de telecomunicação baseado no fato de que o consumo de energia aumenta polinomialmente (no minimo duas vezes) proportionalmente a distancia.
 ###### Contribution
+Apresenta uma solução que economiza até 22.18% da bateria considerando distancia de base emissora/receptora de dados durante deslocamento até ponto alvo 
+e utilizando dijkstra para busca em grafo
 ###### Comparison
+Modela custo energético em relação a distancia da base emissora/receptora enquanto se desloca até a regao alvo baseado em busca em grafo.
 
+Related research deal with energy efficiency by choosing paths that minimize energy consumption through graph search (\ie, A*, and Dijkstra), without considering different types of actions such as enabling/disabling hardware devices or computational resources. 
+Thus, planning strategies attempt to save energy by searching for the shortest path \cite{stentz1994,kruger2007}, or avoiding known regions that require more effort from the robotic system and consequently higher energy consumption \cite{Datouo2017Optimal,Jabbarpour2017Green,Liu2014Minimizing,Mejri2017Energy,Niu2018Energy,Ooi2009Minimal}. 
+The latter strategy resembles our approach regarding planning to avoid areas of greater energetic consumption. 
+In our case, apart from avoiding such areas, we act upon enabling/disabling hardware resources. 
 
+For ground robots, the main criterion for energy saving is to avoid terrain areas with a high friction coefficient \cite{Datouo2017Optimal,Mejri2017Energy} and greater elevation slopes \cite{Jabbarpour2017Green}. 
+Datouo \etal~\cite{Datouo2017Optimal} and Mejri \etal~\cite{Mejri2017Energy} describe approaches where priority is given to choosing paths that consume less energy, \ie, avoiding regions of greater friction, even if the robot has to travel a greater distance relative to the shortest path. 
+In both works, the planning algorithm runs offline, using previously built maps and previous knowledge of the surface's friction and elevation profile.  
+Datouo \etal' solution achieves 7.5\% of energy saving while Mejri \etal' solution achieves upon 46\% of energy saving.
+Another approach considering data transmission between the robot and transmission bases is presented by Ooi \etal~\cite{Ooi2009Minimal}.
+In this study, the robotic system considers the fact that the energy consumption on data transmitting increases polynomially (at least twice) with the distance from the transmission base while traveling to its goal.
+So, choosing paths near to the transmission base the simulations shows energy saving around 22.1\%.
 
-###### Stentz1994Optimal ######
-###### Aprroach
-###### Contribution
-###### Comparison
+All the related search discussed presented above results of software simulation.
+Like our approach, only Liu \etal~\cite{Liu2014Minimizing} and Niu \etal~\cite{Niu2018Energy} present real-world trials for evaluation of the energy-saving strategies.
+Liu \etal~\cite{Liu2014Minimizing}, as well as the other presented works,  use graph search considering the energy cost of passing through areas of different coefficient of friction, its results show energy savings around 3.5\%.
+For marine robots, Niu \etal~\cite{Niu2018Energy} describe an algorithm based on optimal path planning considering marine current data from an online database. 
+After performing several real-world tests around Singapore islands, the authors observed up to 52.84\% energy savings when compared to the energy consumption when traveling through the shortest path. 
 
+In comparison to our work none of the related research presented planning of actions as our approach, they all use graph search considering energy consumption heuristics for path planning.
+The best results considering energying saving was around 46\% for ground robot and up to 52.84 for a marine robot, and considering real-world test using ground robots the best result was around 3.5\% of energy saving.
+Our aproach reaches 56% of energy saving in real-world tests.
 
-
-A wrong estimation may lead to unexpected crashes, while a too simplistic one may underuse the full potential of the battery, decreasing the task performance.
-
-Usually, for \USV, there is a limited energy and saving energy allow more complex and demanding missions.
-\USV energy-aware path planning studies usually are based on the fact that sea current imply higher level of energy cost on trnaspacing such waters.
-For example, in Niu \etal~\cite{Niu2018Energy} they present an energy efficient path planning for USVs considering sea current data;
-They use a combination of Voronoi diagram, Visibility Graph, Dijkstra search and energy consuption function for determination of the path.
-For each Voronoi segment its determined a energy consumption weight calculated based on \USV relative speed, the sea current speed, the drag force the \USV experiences, and the travel duration.
-The predicted sea current speed is based on samples of the Tidetech Ltd, 2016. " Tidetech Ltd, Currents sample [Online]. https://www.tidetech.org/data. (Accessed 12 December 2016)".
-They present simulations of \USV path planning in the Singapore Strait and Croatian islands and compare the simulation results to fifteen real-world trial on the same regions.
-Comparisons between the energy-aware path in comparison to the shortest path indicate increase on energy saving between 1.27% and 52.84%. 
-More energy saving was found on situation with favourable sea current direction and low speed.
-
-Franco and Buttazo \cite{Franco2016Coverage} present an energy model for determination of the energy cost of the path traveled by a \UAV when covering the area using the back-and-forth pattern.
-They determine the cost of a path considering basic measurable maneuvers, i.e., climb/descend, accelerate/decelerate, fly at constant speed, and rotate.
-The path planning is based on an energy model defined from the power consumption measured for each operation.
-See equation 6.
-Based on the equation 6 the authors propose the computation of the integral of the energy cost related to a distance d, in order to find the optimal speed that minimizes the energy necessary to travel the d portion of the path.
-Their model considers that the \UAV starts from zero speed, reaches and keeps a constant speed, and then decelerates until zero before the turning maneuver at the end of each straight line.
-
-In Cabreira et al. \cite{Cabreira2018Energy} they expand the energy model presented by Franco and Buttazo considering spiral cover patterns.
-The energy-aware spiral algorithm determines a set of waypoints and vertices that generate polygonal paths.
-The path planning algorithm contains the same energy model present in Franco and Buttazo to set different optimal speeds when flying in straight segments of the path.
-Also, Cabreira et al. improve the model considering decelerations different from 0 during turn in a spiral path.
-Moreover, adapted the optimal speed determination through integral adding acceleration and deceleration functions to the integral.
-
-ReducedText:
-
-Franco and Buttazo \cite{Franco2016Coverage} present an energy-aware path planning strategy for USVs performing area coverage using the back-and-forth pattern.
-They present a model based on the possible maneuvers of USVs (i.e. climb/descend, accelerate/decelerate), this way for each segment of the coverage route a maneuver sequence is determined to reduce energy consumption as a function of time.
-Based on \cite{Franco2016Coverage} Cabreira et al. \cite{Cabreira2018Energy} expand the energy model presented by Franco and Buttazo considering spiral cover patterns.
-The energy-aware spiral algorithm determines a set of waypoints and vertices that generate polygonal paths.
-Cabreira et al. improve the model considering acelerations different from 0 during turn when going from one trajectory segment to another.
-
-
-
-(energy OR autonomy) AND (path AND planning) AND ground
